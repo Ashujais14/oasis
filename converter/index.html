@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Temperature Converter</title>
+	<style type="text/css">
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #2a2929;
+		}
+
+		.container {
+			width: 400px;
+			margin: 50px auto;
+			background-color: #FFFFFF;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            gap:20px;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 30px;
+			margin-bottom: 30px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+		}
+        .Subheading{
+            font-size: 30px;
+            gap:10px;
+            
+        }
+        .input[type="number"] {
+			width: 130%;
+            height: 20px;
+			padding: 20px;
+			margin-bottom: 20px;
+			border: none;
+			border-radius: 10px;
+			box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+            
+		}
+        #celsius{
+            border:3px solid black;
+            border-radius: 30px;
+            height:100%;
+            width: 100%;
+        }
+        #Fahrenheit{
+            border:3px solid black;
+            border-radius: 30px;
+            height:100%;
+            width: 100%;
+
+        }
+
+		
+
+		
+		
+        button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #9f0f0f2a;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #070a0d60;
+}
+
+button:active {
+  background-color: #ced0d3;
+}
+  .result {
+			padding: 20px;
+			margin-top: 20px;
+			background-color: #faf7f7;
+			border-radius: 15px;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
+			text-align: center;
+			font-size: 40spx;
+			z-index: 2;
+            
+		}
+	</style>
+    
+</head>
+<body>
+    
+	<div class="container">
+
+		<h1>Temperature Converter</h1>
+		<label class="Subheading"> Celsius To Fahrenheit:</label><br/>
+		<input type="number" id="celsius" placeholder="Enter temperature in Celsius"><br/>
+		<button onclick="convert()">Convert</button>
+ 
+		<div class="result" id="result"></div><br/>
+        <label class="Subheading" >Fahrenheit To Celsius:</label><br/>
+		<input type="number" id="Fahrenheit" placeholder="Enter temperature in Fahrenheit"><br/>
+	    <button onclick="convert1()">Convert</button>
+		<div class="result" id="result"></div>
+        
+        
+	</div>
+
+	<script type="text/javascript">
+		let celsius = document.getElementById("celsius");
+        let fahrenheit = document.getElementById("fahrenheit");
+
+function celToFar(){
+    let output = ( parseFloat(celsius.value) * 9/5 ) + 32;
+    fahrenheit.value = parseFloat(output.toFixed(2));
+}
+
+function farToCel(){
+    let output = ( parseFloat(fahrenheit.value) - 32) * 5/9;
+    celsius.value = parseFloat( output.toFixed(2));
+    console.log(output);
+}
+
+	</script>
+</body>
+</html>
